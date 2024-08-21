@@ -14,7 +14,8 @@ system_create_user() {
 
   sleep 2
 
-  useradd -m -p $(openssl passwd -crypt ${mysql_root_password}) -s /bin/bash -G deploy
+  useradd -m -p $(openssl passwd -1 ${mysql_root_password}) -s /bin/bash -G deploy
+  sleep 2
   usermod -aG deploy
 
   sleep 2
